@@ -2,6 +2,7 @@
 
 .content {
   @include make-row;
+  margin: 0 auto;
   &:empty {
     &::before {
       color: lighten($info, 25%);
@@ -10,7 +11,12 @@
       line-height: .85;
       padding: 10px;
       text-align: center;
-      width: 100%;
+      width: 95%;
     }
    }
+ }
+
+body {
+  padding-left: 5px;
+  padding-right: 5px;
  }

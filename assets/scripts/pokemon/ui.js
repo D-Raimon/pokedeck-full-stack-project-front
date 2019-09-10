@@ -14,6 +14,12 @@ const getPokemonSuccess = (data) => {
   console.log('Pokemon retreived successfully!')
 }
 
+const updatePokemonSuccess = (data) => {
+  $('#update-pokemon-modal-message').text(`${data.pokemon.name} updated successfully!`)
+  $('#update-pokemon').trigger('reset')
+  console.log(data)
+}
+
 const failure = (error) => {
   console.error(error)
 }
@@ -21,5 +27,6 @@ const failure = (error) => {
 module.exports = {
   createPokemonSuccess,
   getPokemonSuccess,
+  updatePokemonSuccess,
   failure
 }

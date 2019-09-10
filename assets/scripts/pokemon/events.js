@@ -18,13 +18,16 @@ const onGetPokemon = (event) => {
     .then(ui.getPokemonSuccess)
     .catch(ui.failure)
 }
-//
-// const onUpdatePokemon = (event) => {
-//   event.preventDefault()
-//
-//
-// }
-//
+
+const onUpdatePokemon = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // console.log('updateEvent', data.pokemon.id)
+  api.updatePokemon(data)
+    .then(ui.updatePokemonSuccess)
+    .catch(ui.failure)
+}
+
 const onDeletePokemon = (event) => {
   const id = $(event.target).data('id')
   api.deletePokemon(id)
@@ -40,6 +43,14 @@ const addHandlers = () => {
   $('#create-pokemon').on('submit', onCreatePokemon)
   $('#getPokemonButton').on('click', onGetPokemon)
   $('.content').on('click', '.delete-button', onDeletePokemon)
+  $('.content').on('click', '.update-button', function () {
+    const myPokemonId = $(this).data('id')
+    $('.modal-body #pokemonId').val(myPokemonId)
+  })
+  $('#update-pokemon').on('submit', onUpdatePokemon)
+  // $('#update-pokemon').click(function () {
+  //   $(this).parent().attr('data-id')
+  // })
 }
 
 module.exports = {

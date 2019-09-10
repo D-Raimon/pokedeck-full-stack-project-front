@@ -23,6 +23,17 @@ const getPokemon = () => {
   })
 }
 
+const updatePokemon = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/pokemons/' + data.pokemon.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 const deletePokemon = (id) => {
   return $.ajax({
     url: config.apiUrl + '/pokemons/' + id,
@@ -36,5 +47,6 @@ const deletePokemon = (id) => {
 module.exports = {
   createPokemon,
   getPokemon,
+  updatePokemon,
   deletePokemon
 }

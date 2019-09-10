@@ -12,8 +12,11 @@
         No image provided.
       {{/if}}
     </p>
-    <button class="btn btn-danger delete-button" data-id="{{pokemon.id}}">Delete</button>
-    <button class="btn btn-warning update-button" data-id="{{pokemon.id}}">Update</button>
+    <div class="pokemon-listing-button">
+      <button class="btn btn-danger delete-button" data-id="{{pokemon.id}}">Delete</button>
+      <!-- <button class="btn btn-warning update-button" data-id="{{pokemon.id}}">Update</button> -->
+      <button class="btn btn-warning update-button" data-toggle="modal" data-target="#updatePokemonModal" data-id="{{pokemon.id}}">Update</button>
+    </div>
     <!-- {{> partial}} -->
   </section>
 
