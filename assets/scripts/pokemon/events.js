@@ -24,7 +24,9 @@ const onUpdatePokemon = (event) => {
   const data = getFormFields(event.target)
   // console.log('updateEvent', data.pokemon.id)
   api.updatePokemon(data)
-    .then(ui.updatePokemonSuccess)
+    .then(ui.updatePokemonSuccess).then(function () {
+      onGetPokemon(event)
+    })
     .catch(ui.failure)
 }
 
