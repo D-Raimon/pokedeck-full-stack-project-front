@@ -25,15 +25,21 @@ const onGetPokemon = (event) => {
 //
 // }
 //
-// const onDeletePokemon = (event) => {
-//   event.preventDefault()
-//
-//
-// }
+const onDeletePokemon = (event) => {
+  const id = $(event.target).data('id')
+  api.deletePokemon(id)
+    // .then(onGetBooks(event)) bad will run onGetBooks immedietally since we are calling the function with parenthesis
+    // need to call it inside of an annonymous function
+    .then(function () {
+      onGetPokemon(event)
+    })
+    .catch(ui.failure)
+}
 
 const addHandlers = () => {
   $('#create-pokemon').on('submit', onCreatePokemon)
   $('#getPokemonButton').on('click', onGetPokemon)
+  $('.content').on('click', '.delete-button', onDeletePokemon)
 }
 
 module.exports = {

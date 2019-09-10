@@ -4,6 +4,7 @@ const showPokemonsTemplate = require('../templates/pokemon-listing.handlebars')
 
 const createPokemonSuccess = (data) => {
   $('#pokemon-errors').text('Pokemon created successfully!')
+  $('#create-pokemon').trigger('reset')
   console.log(data)
 }
 
