@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="https://farm5.staticflickr.com/4780/40928027452_67f1202c5e.jpg">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -14,7 +14,7 @@
     <body>
       <header>
       <div id="message-auth"></div>
-      <div id="signed-in-user"></div>
+      <div id="pokemon-errors"></div>
 
         <section class="signed-out">
 
@@ -60,7 +60,17 @@
 
       <h1><img src="https://fontmeme.com/permalink/190906/345c010c9011521ae590643999d13471.png" alt="pokemon-font" border="0"></h1>
       <section>
-        <h2>Create a Pokemon!</h2>
+        <form id="create-pokemon" class="border">
+          <fieldset>
+            <legend>Create a Pokemon!</legend>
+            <input type="text" name="pokemon[name]" placeholder="Name">
+            <input type="text" name="pokemon[el_type]" placeholder="Element Type">
+            <input type="number" name="pokemon[gen]" placeholder="Generation">
+            <input type="text" name="pokemon[img]" placeholder="Image Link">
+            <input type="submit" value="Create Pokemon!">
+          </fieldset>
+        </form>
+
       </section>
     </body>
 </html>
