@@ -1,0 +1,19 @@
+{{#each pokemons as |pokemon|}}
+  <!-- {{log pokemon}} -->
+  <section data-id="{{pokemon.id}}">
+    <!-- <h3> -->
+      <!-- {{limit pokemon.name 15}} limit here references the helper file limit.js-->
+    <!-- </h3> -->
+    <h6>Pokemon:</h6>
+    <p>
+      {{#if pokemon.img}}
+        <img src = "{{pokemon.img}}"img/> <!--Need to double check that this is correct way to display image in handlebars -->
+      {{else}}
+        No image provided.
+      {{/if}}
+    </p>
+    <button class="btn btn-danger delete-button" data-id="{{pokemon.id}}">Delete</button>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}

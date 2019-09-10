@@ -13,6 +13,17 @@ const createPokemon = (data) => {
   })
 }
 
+const getPokemon = () => {
+  return $.ajax({
+    url: config.apiUrl + '/pokemons',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createPokemon
+  createPokemon,
+  getPokemon
 }

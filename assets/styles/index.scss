@@ -1,1 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
+
+.content {
+  @include make-row;
+  &:empty {
+    &::before {
+      color: lighten($info, 25%);
+      // content: 'Click Get Pokemon';
+      font-size: 10vh;
+      line-height: .85;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+    }
+   }
+ }

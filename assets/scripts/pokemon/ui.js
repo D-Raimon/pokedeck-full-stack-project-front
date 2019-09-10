@@ -1,5 +1,5 @@
 'use strict'
-
+const showPokemonsTemplate = require('../templates/pokemon-listing.handlebars')
 // const store = require('../store.js')
 
 const createPokemonSuccess = (data) => {
@@ -7,12 +7,18 @@ const createPokemonSuccess = (data) => {
   console.log(data)
 }
 
-const createPokemonFailure = (error) => {
-  $('#pokemon-errors').text('Error trying to create Pokemon!')
+const getPokemonSuccess = (data) => {
+  const showPokemonsHtml = showPokemonsTemplate({ pokemons: data.pokemons })
+  $('.content').html(showPokemonsHtml)
+  console.log('Pokemon retreived successfully!')
+}
+
+const failure = (error) => {
   console.error(error)
 }
 
 module.exports = {
   createPokemonSuccess,
-  createPokemonFailure
+  getPokemonSuccess,
+  failure
 }

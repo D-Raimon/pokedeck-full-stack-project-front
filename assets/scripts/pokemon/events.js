@@ -9,14 +9,15 @@ const onCreatePokemon = (event) => {
   const data = getFormFields(event.target)
   api.createPokemon(data)
     .then(ui.createPokemonSuccess)
-    .catch(ui.createPokemonFailure)
+    .catch(ui.failure)
 }
 
-// const onGetPokemon = (event) => {
-//   event.preventDefault()
-//
-//
-// }
+const onGetPokemon = (event) => {
+  event.preventDefault()
+  api.getPokemon()
+    .then(ui.getPokemonSuccess)
+    .catch(ui.failure)
+}
 //
 // const onUpdatePokemon = (event) => {
 //   event.preventDefault()
@@ -32,6 +33,7 @@ const onCreatePokemon = (event) => {
 
 const addHandlers = () => {
   $('#create-pokemon').on('submit', onCreatePokemon)
+  $('#getPokemonButton').on('click', onGetPokemon)
 }
 
 module.exports = {
