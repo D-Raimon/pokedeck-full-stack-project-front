@@ -5,23 +5,24 @@ const showPokemonsTemplate = require('../templates/pokemon-listing.handlebars')
 const createPokemonSuccess = (data) => {
   $('#pokemon-errors').text('Pokemon created successfully!')
   $('#create-pokemon').trigger('reset')
-  console.log(data)
+  // console.log(data)
 }
 
 const getPokemonSuccess = (data) => {
   const showPokemonsHtml = showPokemonsTemplate({ pokemons: data.pokemons })
   $('.content').html(showPokemonsHtml)
-  console.log('Pokemon retreived successfully!')
+  // console.log('Pokemon retreived successfully!')
 }
 
 const updatePokemonSuccess = (data) => {
-  $('#update-pokemon-modal-message').text(`${data.pokemon.name} updated successfully!`)
+  $('#pokemon-errors').text(`${data.pokemon.name} updated successfully!`)
   $('#update-pokemon').trigger('reset')
-  console.log(data)
+  // console.log(data)
 }
 
 const failure = (error) => {
-  console.error(error)
+  // console.error(error)
+  return error
 }
 
 module.exports = {

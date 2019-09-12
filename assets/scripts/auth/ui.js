@@ -32,6 +32,7 @@ const signOutSuccess = function () {
   // $('#message-auth').text('Signed out successfully!')
   $('.content').text('')
   $('#message-auth').text('')
+  $('#pokemon-errors').text('')
   $('#sign-in-modal-message').text('')
   $('#sign-up-modal-message').text('')
   $('#navbarDropdownMenuLink').text('')
