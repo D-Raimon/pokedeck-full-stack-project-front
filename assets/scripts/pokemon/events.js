@@ -22,7 +22,6 @@ const onGetPokemon = (event) => {
 const onUpdatePokemon = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log('updateEvent', data.pokemon.id)
   api.updatePokemon(data)
     .then(ui.updatePokemonSuccess).then(function () {
       onGetPokemon(event)
@@ -50,9 +49,6 @@ const addHandlers = () => {
     $('.modal-body #pokemonId').val(myPokemonId)
   })
   $('#update-pokemon').on('submit', onUpdatePokemon)
-  // $('#update-pokemon').click(function () {
-  //   $(this).parent().attr('data-id')
-  // })
 }
 
 module.exports = {

@@ -1,20 +1,15 @@
 {{#each pokemons as |pokemon|}}
   <!-- {{log pokemon}} -->
-  <section data-id="{{pokemon.id}}">
-    <!-- <h3> -->
-      <!-- {{limit pokemon.name 15}} limit here references the helper file limit.js-->
-    <!-- </h3> -->
-    <h6>Pokemon:</h6>
+  <section data-id="{{pokemon.id}}" style="margin: 10px;">
     <p>
       {{#if pokemon.img}}
-        <img src = "{{pokemon.img}}"img/> <!--Need to double check that this is correct way to display image in handlebars -->
+        <img src = "{{pokemon.img}}"img/>
       {{else}}
-        No image provided.
+        {{pokemon.name}}
       {{/if}}
     </p>
-    <div class="pokemon-listing-button">
+    <div class="pokemon-listing-button text-center">
       <button class="btn btn-danger delete-button" data-id="{{pokemon.id}}">Delete</button>
-      <!-- <button class="btn btn-warning update-button" data-id="{{pokemon.id}}">Update</button> -->
       <button class="btn btn-warning update-button" data-toggle="modal" data-target="#updatePokemonModal" data-id="{{pokemon.id}}">Update</button>
     </div>
     <!-- {{> partial}} -->

@@ -3,19 +3,20 @@
 const store = require('../store.js')
 
 const signUpSuccess = function (data) {
-  $('#message-auth').text('Signed up successfully!')
+  $('#sign-up-modal-message').text('Signed up successfully!')
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function (error) {
-  $('#message-auth').text('Error on sign up.')
+  $('#sign-up-modal-message').text('Error on sign up.')
   return error
 }
 
 const signInSuccess = function (data) {
-  $('#message-auth').text('Signed in successfully')
+  $('#sign-in-modal-message').text('Signed in successfully')
   $('#sign-in').trigger('reset')
   store.user = data.user
+  $('#navbarDropdownMenuLink').text(store.user.email)
 }
 
 const signInFailure = function (error) {
@@ -24,14 +25,17 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function () {
-  $('#message-auth').text('Signed out successfully!')
+  // $('#message-auth').text('Signed out successfully!')
+  $('.content').text('')
+  $('#message-auth').text('')
+  $('#sign-in-modal-message').text('')
+  $('#sign-up-modal-message').text('')
+  $('#navbarDropdownMenuLink').text('')
   store.user = null
 }
 
 const signOutFailure = function (error) {
   $('#message-auth').text('Error on sign out.')
-  $('#message-auth').removeClass()
-  $('#message-auth').addClass('failure')
   return error
 }
 
