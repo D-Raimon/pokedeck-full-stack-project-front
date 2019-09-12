@@ -18,5 +18,20 @@
  }
 
 body {
-  background-color: #a3a3a3;
+  background-color: white;
  }
+
+.signed-out {
+  display: block;
+  text-align: center;
+}
+
+.signed-in {
+  display: none;
+  text-align: center;
+}
+
+.dropdown-toggle {
+  display: none;
+  color: white;
+}

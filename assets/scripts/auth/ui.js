@@ -3,12 +3,12 @@
 const store = require('../store.js')
 
 const signUpSuccess = function (data) {
-  $('#sign-up-modal-message').text('Signed up successfully!')
+  $('#message-auth').text('Signed up successfully!')
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function (error) {
-  $('#sign-up-modal-message').text('Error on sign up.')
+  $('#message-auth').text('Error on sign up.')
   return error
 }
 
@@ -17,6 +17,10 @@ const signInSuccess = function (data) {
   $('#sign-in').trigger('reset')
   store.user = data.user
   $('#navbarDropdownMenuLink').text(store.user.email)
+  $('.signed-out').css('display', 'none')
+  $('.signed-in').css('display', 'block')
+  $('.dropdown-toggle').css('display', 'block')
+  $('#message-auth').text('')
 }
 
 const signInFailure = function (error) {
@@ -31,6 +35,9 @@ const signOutSuccess = function () {
   $('#sign-in-modal-message').text('')
   $('#sign-up-modal-message').text('')
   $('#navbarDropdownMenuLink').text('')
+  $('.signed-out').css('display', 'block')
+  $('.signed-in').css('display', 'none')
+  $('.dropdown-toggle').css('display', 'none')
   store.user = null
 }
 

@@ -15,20 +15,14 @@
 
       <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #e63629;">
         <a class="navbar-brand" href="#"><img src="https://fontmeme.com/permalink/190911/57f11334a1823b915c69ddc945fecb24.png" alt="PokéDecks" border="0"></a></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
           <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navb" class="navbar-collapse collapse hide">
+        </button> -->
+        <!-- <div id="navb" class="navbar-collapse collapse hide">
           <ul class="navbar-nav"></ul>
 
           <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#signup" data-toggle="modal" data-target="#modalSignUpForm">Sign Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#signin" data-toggle="modal" data-target="#modalSignInForm"> Sign In</a>
-            </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown"> -->
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -48,89 +42,11 @@
                     </fieldset>
                   </form>
                 </a>
-              </div>
-            </li>
-          </ul>
+              <!-- </div> -->
+            <!-- </li> -->
+          <!-- </ul> -->
         </div>
       </nav>
-
-      <div class="modal fade" id="modalSignUpForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="sign-up">
-                <fieldset>
-                  <legend>Sign up!</legend>
-                  <input type="text" name="credentials[email]" placeholder="Email">
-                  <input type="password" name="credentials[password]" placeholder="Password">
-                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-                  <input type="submit" value="Sign up!">
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <div id="sign-up-modal-message"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="modalSignInForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="sign-in">
-                <fieldset>
-                  <input type="text" name="credentials[email]" placeholder="Email">
-                  <input type="password" name="credentials[password]" placeholder="Password">
-                  <input type="submit" class="btn btn-warning" value="Sign In">
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <div id="sign-in-modal-message"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="modal fade" id="modalChangePasswordForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="change-password" class="border">
-                <fieldset>
-                  <input type="password" name="passwords[old]" placeholder="Current Password">
-                  <input type="password" name="passwords[new]" placeholder="New Password">
-                  <input type="submit" value="Change Password">
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <div id="change-password-modal-message"></div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
 
       <div class="modal fade" id="updatePokemonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -162,23 +78,39 @@
 
 
       <header>
-      <div id="message-auth"></div>
-      <div id="pokemon-errors"></div>
+        <div id="message-auth"></div>
+        <div id="pokemon-errors"></div>
+      </header>
 
+    <section class="signed-out" id="signed-out">
+      <p>Sign Up or Sign In to get started!</p>
+      <div>
+        <img src="https://i.imgur.com/E9EHO5l.gif" alt="waving pikachu gif"/>
+      </div>
+      <div>
+        <form id="sign-in">
+          <fieldset>
+            <legend>Sign In</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" class="btn btn-warning" value="Sign In">
+          </fieldset>
+        </form>
+      </div>
+      <div>
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" class="btn btn-warning" value="Sign up!">
+          </fieldset>
+        </form>
+      </div>
+    </section>
 
-        <!-- <section class="signed-in">
-          <form id="change-password" class="border">
-            <fieldset>
-              <legend>Change Password!</legend>
-              <input type="password" name="passwords[old]" placeholder="Current Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" value="Change Password">
-            </fieldset>
-          </form>
-      </section> -->
-    </header>
-
-      <section>
+      <section class="signed-in">
         <form id="create-pokemon" class="border">
           <fieldset>
             <legend>Create a Pokemon!</legend>
@@ -189,8 +121,6 @@
             <input type="submit" class="btn btn-warning" value="Create Pokemon!">
           </fieldset>
         </form>
-      </section>
-      <section>
         <button id="getPokemonButton" class="btn btn-warning mr-2">Get Pokemon!</button>
         <div id="content" class="content"></div>
       </section>
