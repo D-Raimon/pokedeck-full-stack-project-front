@@ -11,6 +11,7 @@ const createPokemonSuccess = (data) => {
 const getPokemonSuccess = (data) => {
   const showPokemonsHtml = showPokemonsTemplate({ pokemons: data.pokemons })
   $('.content').html(showPokemonsHtml)
+  $('#pokemon-errors').text('')
   // console.log('Pokemon retreived successfully!')
 }
 
@@ -21,7 +22,7 @@ const updatePokemonSuccess = (data) => {
 }
 
 const failure = (error) => {
-  // console.error(error)
+  $('#pokemon-errors').text('Whoops, unable to process request. Please try again!')
   return error
 }
 
