@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>PokeDecks</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="https://farm5.staticflickr.com/4780/40928027452_67f1202c5e.jpg">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #e63629;">
+        <a class="navbar-brand" href="#"><img src="https://fontmeme.com/permalink/190911/57f11334a1823b915c69ddc945fecb24.png" alt="PokéDecks" border="0"></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">
+                  <form id="sign-out">
+                    <fieldset>
+                      <input type="submit" class="btn btn-warning" value="Sign Out!">
+                    </fieldset>
+                  </form>
+                </a>
+                <a class="dropdown-item" href="#">
+                  <form id="change-password" class="border">
+                    <fieldset>
+                      <div><input type="password" name="passwords[old]" placeholder="Current Password"></div>
+                      <div><input type="password" name="passwords[new]" placeholder="New Password"></div>
+                      <div><input type="submit" value="Change Password"></div>
+                    </fieldset>
+                  </form>
+                </a>
+        </div>
+      </nav>
+
+      <div class="modal fade" id="updatePokemonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Update Pokemon!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <form id="update-pokemon">
+              <fieldset>
+                <input type="hidden" name="pokemon[id]" id="pokemonId" value=""/>
+                <input type="text" name="pokemon[name]" placeholder="Name">
+                <input type="text" name="pokemon[el_type]" placeholder="Element Type">
+                <input type="number" name="pokemon[gen]" placeholder="Generation">
+                <input type="text" name="pokemon[img]" placeholder="Image Link">
+                <input type="submit" class="btn btn-warning" value="Update Pokemon!">
+              </fieldset>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <div id="update-pokemon-modal-message"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <header>
+        <div id="message-auth"></div>
+        <div id="pokemon-errors"></div>
+      </header>
+
+    <section class="signed-out" id="signed-out">
+      <p>Sign Up or Sign In to get started!</p>
+      <div>
+        <img src="https://i.imgur.com/E9EHO5l.gif" alt="waving pikachu gif"/>
+      </div>
+      <div>
+        <form id="sign-in">
+          <fieldset>
+            <legend>Sign In</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" class="btn btn-warning" value="Sign In">
+          </fieldset>
+        </form>
+      </div>
+      <div>
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" class="btn btn-warning" value="Sign up!">
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+      <section class="signed-in">
+        <form id="create-pokemon" class="border">
+          <fieldset>
+            <legend>Create a Pokemon!</legend>
+            <input type="text" name="pokemon[name]" placeholder="Name">
+            <input type="text" name="pokemon[el_type]" placeholder="Element Type">
+            <input type="number" name="pokemon[gen]" placeholder="Generation">
+            <input type="text" name="pokemon[img]" placeholder="Image Link">
+            <input type="submit" class="btn btn-warning" value="Create Pokemon!">
+          </fieldset>
+        </form>
+        <button id="getPokemonButton" class="btn btn-warning mr-2">Get Pokemon!</button>
+        <div id="content" class="content"></div>
+      </section>
+
+
+      <nav class="navbar fixed-bottom navbar-expand-lg navbar-light" style="background-color: #00b2ed;">
+       <a class="navbar-brand" href="#"></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarText">
+         <ul class="navbar-nav mr-auto">
+         </ul>
+         <span class="navbar-text">
+           Project By David Murray Raimon
+         </span>
+       </div>
+     </nav>
+
+    </body>
+</html>
